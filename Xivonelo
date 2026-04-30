@@ -1,0 +1,54 @@
+import React from "react"; import { Button } from "@/components/ui/button"; import { Card, CardContent } from "@/components/ui/card"; import { Input } from "@/components/ui/input"; import { Textarea } from "@/components/ui/textarea"; import { motion } from "framer-motion";
+
+export default function XivoneloWebsite() { const portfolio = [ { image: "/images/flyer1.jpg", title: "Church Flyer" }, { image: "/images/flyer2.jpg", title: "Wedding Flyer" }, { image: "/images/flyer3.jpg", title: "Business Flyer" }, { image: "/images/shirt1.jpg", title: "Clothing Design" }, ];
+
+const designPrices = [ "Church Flyers: R70 - R100", "Wedding Flyers: R80 - R150", "Invitation Flyers: R70 - R100", "Business Flyers: R50 - R100", "School Events Flyers: R70 - R100", "Club Gigs: R80 - R200", "Invitation Cards: R60 - R100", "Tickets Design: R60 - R100", "Obituary Design: R50 - R100", "Logo Design: R70 - R100", ];
+
+const clothing = [ "Shirt - R150", "T-Shirt - R200", "Hoodie - R350", "Cap - R120", "Hat - R120", "Socks - R60", "Branded Bracelet - R30", ];
+
+return ( <div className="min-h-screen bg-gray-50 text-gray-900"> {/* Navbar */} <nav className="flex justify-between items-center p-6 shadow bg-white"> <div> <h1 className="text-2xl font-bold">Xivonelo Media</h1> <p className="text-sm text-gray-500">Designs & Clothing</p> </div> </nav>
+
+{/* Hero */}
+  <section className="text-center py-20 px-6 bg-black text-white">
+    <motion.h2
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="text-4xl font-bold mb-4"
+    >
+      Xivonelo Media
+    </motion.h2>
+    <p className="mb-6">
+      Professional Graphic Designs & Clothing Brand "Know Jesus Know Peace"
+    </p>
+    <Button asChild>
+      <a href="https://wa.me/27730389341" target="_blank">Order on WhatsApp</a>
+    </Button>
+  </section>
+
+  {/* Portfolio */}
+  <section className="py-16 px-6">
+    <h2 className="text-3xl font-bold text-center mb-10">My Work</h2>
+    <div className="grid md:grid-cols-3 gap-6">
+      {portfolio.map((item, i) => (
+        <Card key={i}>
+          <CardContent className="p-4">
+            <img src={item.image} className="h-40 w-full object-cover rounded-xl" />
+            <p className="mt-2">{item.title}</p>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </section>
+
+  {/* Design Prices */}
+  <section className="py-16 px-6 bg-white">
+    <h2 className="text-3xl font-bold text-center mb-10">Design Prices</h2>
+    <div className="max-w-xl mx-auto space-y-2">
+      {designPrices.map((price, i) => (
+        <p key={i}>• {price}</p>
+      ))}
+    </div>
+  </section>
+
+  {/* Clothing */}
+  <section className="py
